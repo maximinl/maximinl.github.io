@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Max Lange</title>
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/favicon-16x16.png"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			body {
+				font-family: "JetBrains Mono", monospace;
+				max-width: 800px;
+				margin: 40px auto;
+				padding: 0 20px;
+				line-height: 1.6;
+				color: rgb(30, 30, 30);
+				font-size: 15.2px;
+				font-weight: 300;
+				display: block;
+				opacity: 0;
+				transition: opacity 0.7s ease;
+			}
+			h1 {
+				font-size: 24px;
+				font-weight: 500;
+				margin-bottom: 4px;
+			}
+			.subtitle {
+				margin-top: 0;
+				margin-bottom: 40px;
+			}
+			.section {
+				margin-bottom: 24px;
+			}
+			.section-title {
+				cursor: pointer;
+				margin-bottom: 16px;
+			}
+			.section-title:before {
+				content: "▼";
+				display: inline-block;
+				margin-right: 8px;
+				transform: rotate(-90deg);
+				transition: transform 0.2s;
+			}
+			.section-title.active:before {
+				transform: rotate(0);
+			}
+			.section-content {
+				display: none;
+				margin-left: 24px;
+			}
+			.section-content.visible {
+				display: block;
+			}
+			a {
+				color: #333;
+				text-decoration: underline;
+			}
+			.experience-item {
+				margin-bottom: 16px;
+			}
+			.experience-title {
+				font-weight: 500;
+			}
+			.experience-company {
+				margin-top: 4px;
+			}
+			.experience-date {
+				color: #666;
+				font-size: 0.9em;
+			}
+		</style>
+		<style>
+			@media (prefers-color-scheme: dark) {
+				body {
+					background: #1a1a1a;
+					color: #f0f0f0;
+				}
+				.section-title,
+				a {
+					color: #f0f0f0;
+				}
+				.section-content {
+					color: #d8d8d8;
+				}
+				.experience-date {
+					color: #999;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Max Lange</h1>
+		<p class="subtitle">Research Scientist on Harley Street | Post-doc @ KCL | Ex-Harvard/MIT</p>
+		<div class="section">
+			<div class="section-title">[About]</div>
+			<div class="section-content">
+				<p>
+					I mostly work  on AI for healthcare. I recently completed my PhD at King's College London, where I developed machine learning systems for clinical decision support and drug discovery in psychiatry.
+				</p>
+				<p>I also work as a Statistician in the Department of Biostatistics & Health Informatics at KCL. 
+My research focuses on building ethical, curious AI systems that can help improve patient outcomes while being mindful of their limitations.</p>
+			
+I am a Graduate Member of the British Psychological Society and an Associate Member of the Institution of Engineering and Technology.</p>
+			
+			
+				<p>Based in London.</p>
+			</div>
+		</div>
+		<div class="section">
+			<div class="section-title">[Publications]</div>
+			<div class="section-content">
+				<div class="experience-item">
+					<div class="experience-title">
+						Humility and curiosity in human–AI systems for health care
+					</div>
+					<div class="experience-company">The Lancet 2025</div>
+					<div class="experience-date">
+						Cajas Ordoñez, S. A., Lange, M., et al.
+					</div>
+				</div>
+				<div class="experience-item">
+					<div class="experience-title">
+						Developing and Validating a Machine Learning Pharmaceutical Therapy Recommender System for Hospital In-Patients with Schizophrenia Spectrum Disorders
+					</div>
+					<div class="experience-company">BMC Psychiatry 2025</div>
+					<div class="experience-date">
+						Lange, M., Mehta, U., Koutsouleris, N., et al.
+					</div>
+				</div>
+				<div class="experience-item">
+					<div class="experience-title">
+						An accessible, timely method for repurposing medications: hypothesis generating, testing and validation
+					</div>
+					<div class="experience-company">BMC Digital Health 2025</div>
+					<div class="experience-date">
+						Lange, M., Gogarty, E., Martyn, M., et al.
+					</div>
+				</div>
+				<div class="experience-item">
+					<div class="experience-title">
+						Schizophrenia more employable than depression? Language-based artificial intelligence model ratings for employability of psychiatric diagnoses
+					</div>
+					<div class="experience-company">PLOS ONE 2025</div>
+					<div class="experience-date">
+						Lange, M., Koliousis, A., Gogarty, E., et al.
+					</div>
+				</div>
+				<div class="experience-item">
+					<div class="experience-title">
+						Beyond ethics: how inclusive innovation drives economic returns in medical AI
+					</div>
+					<div class="experience-company">arXiv 2025</div>
+					<div class="experience-date">
+						Unnikrishnan, B., Adames, A., Adibi, A., et al. (including Lange, M.)
+					</div>
+				</div>
+				<div class="experience-item">
+					<div class="experience-title">
+						Beyond Overconfidence: Embedding Curiosity and Humility for Ethical Medical AI
+					</div>
+					<div class="experience-company">PLoS Digital Health (In Press)</div>
+					<div class="experience-date">
+						Arslan, J., Benke, K., Cajas Ordoñez, S. A., et al. (including Lange, M.)
+					</div>
+				</div>
+				<div class="experience-item">
+					<div class="experience-title">
+						Digital Intelligence in Qualitative Management Studies
+					</div>
+					<div class="experience-company">Academy of Management Proceedings 2025</div>
+					<div class="experience-date">
+						Lange, M., Flynn, M. C., Twumasi, R.
+					</div>
+				</div>
+				<div class="experience-item">
+					<div class="experience-title">
+						Anxious People, Please Apply! No Evidence for Decreased Perceptions of Employability in Individuals with Mental and Physical Illness Compared to Healthy Controls
+					</div>
+					<div class="experience-company">North American Journal of Psychology 2022</div>
+					<div class="experience-date">
+						Lange, M., Twumasi, R.
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section">
+			<div class="section-title">[Education]</div>
+			<div class="section-content">
+				<div class="experience-item">
+					<div class="experience-title">King's College London</div>
+					<div class="experience-company">PhD, Artificial Intelligence in Mental Healthcare</div>
+					<div class="experience-date">
+						September 2025
+					</div>
+				</div>
+				<div class="experience-item">
+					<div class="experience-title">Massachusetts Institute of Technology</div>
+					<div class="experience-company">Visiting Scholar</div>
+					<div class="experience-date">
+						Spring 2025
+					</div>
+				</div>
+				<div class="experience-item">
+					<div class="experience-title">King's College London</div>
+					<div class="experience-company">MSc, Organisational Psychiatry & Psychology</div>
+					<div class="experience-date">
+						September 2021
+					</div>
+				</div>
+				<div class="experience-item">
+					<div class="experience-title">Jacobs University Bremen</div>
+					<div class="experience-company">BA, Psychology</div>
+					<div class="experience-date">
+						July 2019
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section">
+			<div class="section-title">[Experience]</div>
+			<div class="section-content">
+				<div class="experience-item">
+					<div class="experience-title">Research Scientist</div>
+					<div class="experience-company">The London Psychiatry Clinic at Harley St</div>
+					<div class="experience-date">Oct 2025 - present</div>
+				</div>
+				<div class="experience-item">
+					<div class="experience-title">
+						Statistician
+					</div>
+					<div class="experience-company">King's College London</div>
+					<div class="experience-date">
+						Department of Biostatistics & Health Informatics, Institute of Psychiatry (Oct 2025 - present)
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section">
+			<div class="section-title">[Contact]</div>
+			<div class="section-content">
+				<p>Email: mlange2@mit.edu</p>
+			</div>
+		</div>
+		<script>
+			document.fonts.ready.then(function () {
+				document.body.style.opacity = 1;
+			});
+			document.querySelectorAll(".section-title").forEach((title) => {
+				title.addEventListener("click", () => {
+					const content = title.nextElementSibling;
+					const isVisible = content.classList.contains("visible");
+					content.classList.toggle("visible");
+					title.classList.toggle("active");
+				});
+			});
+			// Show "About" section by default
+			document.querySelectorAll(".section-title")[0].click();
+		</script>
+	</body>
+</html>
