@@ -1,444 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Dr Max Lange</title>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dr Max Lange</title>
 
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="link" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 
-		<link
-			href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
-			rel="stylesheet"
-		/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 
-		<style>
-			body {
-				font-family: "JetBrains Mono", monospace;
-				max-width: 800px;
-				margin: 40px auto;
-				padding: 0 20px;
-				line-height: 1.6;
-				color: rgb(30, 30, 30);
-				font-size: 15.2px;
-				font-weight: 300;
-				display: block;
-				opacity: 0;
-				transition: opacity 0.7s ease;
-			}
-			h1 {
-				font-size: 24px;
-				font-weight: 500;
-				margin-bottom: 4px;
-			}
-			.subtitle {
-				margin-top: 0;
-				margin-bottom: 40px;
-			}
-			.section {
-				margin-bottom: 24px;
-			}
-			.section-title {
-				cursor: pointer;
-				margin-bottom: 16px;
-				user-select: none;
-				outline: none;
-			}
-			.section-title:before {
-				content: "▼";
-				display: inline-block;
-				margin-right: 8px;
-				transform: rotate(-90deg);
-				transition: transform 0.2s;
-			}
-			.section-title.active:before {
-				transform: rotate(0);
-			}
-			.section-content {
-				display: none;
-				margin-left: 24px;
-			}
-			.section-content.visible {
-				display: block;
-			}
-			a {
-				color: #333;
-				text-decoration: underline;
-			}
-			.experience-item {
-				margin-bottom: 16px;
-			}
-			.experience-title {
-				font-weight: 500;
-			}
-			.experience-company {
-				margin-top: 4px;
-			}
-			.experience-date {
-				color: #666;
-				font-size: 0.9em;
-			}
-			.small {
-				font-size: 0.95em;
-			}
-			ul.clean {
-				list-style: none;
-				padding-left: 0;
-				margin: 0;
-			}
-			ul.clean li {
-				margin-bottom: 10px;
-			}
-		</style>
+<style>
+body {
+    font-family: "JetBrains Mono", monospace;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.6;
+    color: rgb(30, 30, 30);
+    font-size: 15.2px;
+    font-weight: 300;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+}
+h1 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+.subtitle {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.section {
+    margin-bottom: 24px;
+}
+.section-title {
+    cursor: pointer;
+    margin-bottom: 16px;
+    user-select: none;
+}
+.section-title:before {
+    content: "▼";
+    display: inline-block;
+    margin-right: 8px;
+    transform: rotate(-90deg);
+    transition: transform 0.2s;
+}
+.section-title.active:before {
+    transform: rotate(0);
+}
+.section-content {
+    display: none;
+    margin-left: 24px;
+}
+.section-content.visible {
+    display: block;
+}
+a {
+    color: #333;
+    text-decoration: underline;
+}
+.experience-item {
+    margin-bottom: 16px;
+}
+.experience-title {
+    font-weight: 500;
+}
+.experience-company {
+    margin-top: 4px;
+}
+.experience-date {
+    color: #666;
+    font-size: 0.9em;
+}
+ul.clean {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+ul.clean li {
+    margin-bottom: 14px;
+}
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #1a1a1a;
+        color: #f0f0f0;
+    }
+    a, .section-title {
+        color: #f0f0f0;
+    }
+    .experience-date {
+        color: #999;
+    }
+}
+</style>
+</head>
 
-		<style>
-			@media (prefers-color-scheme: dark) {
-				body {
-					background: #1a1a1a;
-					color: #f0f0f0;
-				}
-				.section-title,
-				a {
-					color: #f0f0f0;
-				}
-				.section-content {
-					color: #d8d8d8;
-				}
-				.experience-date {
-					color: #999;
-				}
-			}
-		</style>
-	</head>
+<body>
 
-	<body>
-		<h1>Dr Max Lange</h1>
-		<p class="subtitle">Post-doc @ KCL | Ex-Harvard/MIT | Research Consultant</p>
-
-		<div class="section">
-			<div class="section-title" role="button" tabindex="0" aria-expanded="false">
-				[About]
-			</div>
-			<div class="section-content" aria-hidden="true">
-				<p>
-					I work on AI for healthcare, with an emphasis on trustworthy clinical decision support
-					and real-world deployment.
-				</p>
-				<p>
-					I recently completed my PhD at the Institute of Psychiatry, King’s College London, where I developed machine learning
-					systems for clinical decision support and drug discovery.
-				</p>
-				<p>
-					A lot of my day-to-day work involves LLMs: building tools around them, evaluating them, and
-					translating them into practical workflows.
-				</p>
-				<p>
-					I’m a Graduate Member of the British Psychological Society and an Associate Member of the
-					Institution of Engineering and Technology.
-				</p>
-				<p>
-					A decade ago I was a Quarterback for the Highlands University football team in the US (NCAA DIV II).
-					These days always up for a Tennis match (USTA 4.0-ish)
-				</p>
-				<p>Based in London.</p>
-			</div>
-		</div>
-
-		<div class="section">
-			<div class="section-title" role="button" tabindex="0" aria-expanded="false">
-				[Open Source &amp; Live Projects]
-			</div>
-			<div class="section-content" aria-hidden="true">
-				<ul class="clean">
-					<li>
-						<div class="experience-title">Epistemic Virtues for LLMs</div>
-						<div class="experience-company small">
-							Python package (BODHI)
-							— <a href="https://pypi.org/project/bodhi-llm/" target="_blank" rel="noopener noreferrer">pypi.org/project/bodhi-llm/</a>
-						</div>
-					</li>
-					<li>
-						<div class="experience-title">BODHI Framework</div>
-						<div class="experience-company small">
-							Working group
-							— <a href="https://criticaldata.github.io/bodhi/" target="_blank" rel="noopener noreferrer">criticaldata.github.io/bodhi/</a>
-						</div>
-					</li>
-					<li>
-						<div class="experience-title">SAP AI</div>
-						<div class="experience-company small">
-							Clinical trial automation app
-							— <a href="https://sap-kcl-production.up.railway.app/" target="_blank" rel="noopener noreferrer">sap-kcl-production.up.railway.app</a>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
+<h1>Dr Max Lange</h1>
+<p class="subtitle">Applied AI & LLM Systems | Decision Infrastructure | Research Consultant</p>
+<p class="subtitle">Post-doc @ KCL | Ex-Harvard/MIT</p>
 
 <div class="section">
-	<div class="section-title" role="button" tabindex="0" aria-expanded="false">
-		[Publications]
-	</div>
-	<div class="section-content" aria-hidden="true">
-		<div class="experience-item">
-			<div class="experience-title">Peer-Reviewed Journal Articles</div>
-		</div>
-
-		<div class="experience-item">
-			<div class="experience-title">
-				Physical Restraint Use in a United States Intensive Care Unit: Retrospective Cross-Sectional, Single-Center Cohort Study
-			</div>
-			<div class="experience-company">The Lancet Regional Health - Americas (2026)</div>
-			<div class="experience-date">
-				Lange, M., Celi, L., Carter, B., Raffa, J., O'Donoghue, S., Ghassemi, M. &amp; Pollard, T.
-			</div>
-			<div class="experience-date">
-				55(101374).
-				<a href="https://doi.org/10.1016/j.lana.2026.101374" target="_blank" rel="noopener noreferrer">
-					https://doi.org/10.1016/j.lana.2026.101374
-				</a>
-			</div>
-		</div>
-
-		<div class="experience-item">
-			<div class="experience-title">
-				Generating job recommendations for people with schizophrenia spectrum disorder using Gemini 2.0 Flash and Claude Sonnet 4: An exploratory analysis
-			</div>
-			<div class="experience-company">Healthcare Technology Letters (2026)</div>
-			<div class="experience-date">
-				Lange, M., Koutsouleris, N., Carter, B. &amp; Twumasi, R.
-			</div>
-			<div class="experience-date">
-				13(1), e70058.
-				<a href="https://doi.org/10.1049/htl2.70058" target="_blank" rel="noopener noreferrer">
-					https://doi.org/10.1049/htl2.70058
-				</a>
-			</div>
-		</div>
-
-		<div class="experience-item">
-			<div class="experience-title">
-				Beyond overconfidence: Embedding curiosity and humility for ethical medical AI
-			</div>
-			<div class="experience-company">PLOS Digital Health (2026)</div>
-			<div class="experience-date">
-				Cajas Ordoñez, S. A., Castro, R., Celi, L. A., Cruz-Suarez, G. A., Delos Reyes, R., Engelmann, J., Ercole, A., Hilel, A., Kalla, M., Kinyera, L., Lange, M., Lunde, T. M., Meni, M. J., Osorio, F. O., Premo, A. E., Sedlakova, J. &amp; Vig, P.
-			</div>
-			<div class="experience-date">
-				5(1).
-				<a href="https://doi.org/10.1371/journal.pdig.0001013" target="_blank" rel="noopener noreferrer">
-					https://doi.org/10.1371/journal.pdig.0001013
-				</a>
-			</div>
-		</div>
-
-		<div class="experience-item">
-			<div class="experience-title">
-				Humility and curiosity in human-AI systems for health care
-			</div>
-			<div class="experience-company">The Lancet (2025)</div>
-			<div class="experience-date">
-				Cajas Ordoñez, S. A., Lange, M., Lunde, T. M., Meni, M. J. &amp; Premo, A. E.
-			</div>
-			<div class="experience-date">
-				406(10505), 804-805.
-				<a href="https://doi.org/10.1016/S0140-6736(25)01626-5" target="_blank" rel="noopener noreferrer">
-					https://doi.org/10.1016/S0140-6736(25)01626-5
-				</a>
-			</div>
-		</div>
-
-		<div class="experience-item">
-			<div class="experience-title">
-				Developing and Validating a Machine Learning Pharmaceutical Therapy Recommender System for Hospital In-Patients with Schizophrenia Spectrum Disorders
-			</div>
-			<div class="experience-company">BMC Psychiatry (2025)</div>
-			<div class="experience-date">
-				Lange, M., Mehta, U., Koutsouleris, N., Fayez, F. &amp; Twumasi, R.
-			</div>
-			<div class="experience-date">
-				<a href="https://doi.org/10.1186/s12888-025-07657-8" target="_blank" rel="noopener noreferrer">
-					https://doi.org/10.1186/s12888-025-07657-8
-				</a>
-			</div>
-		</div>
-
-		<div class="experience-item">
-			<div class="experience-title">
-				An accessible, timely method for repurposing medications: hypothesis generating: testing and validation
-			</div>
-			<div class="experience-company">BMC Digital Health (2025)</div>
-			<div class="experience-date">
-				Lange, M., Gogarty, E., Martyn, M., Fayez, F., Braude, P., Koutsouleris, N., Howes, O., Twumasi, R. &amp; Carter, B.
-			</div>
-			<div class="experience-date">
-				3(30).
-				<a href="https://doi.org/10.1186/s44247-025-00170-8" target="_blank" rel="noopener noreferrer">
-					https://doi.org/10.1186/s44247-025-00170-8
-				</a>
-			</div>
-		</div>
-
-		<div class="experience-item">
-			<div class="experience-title">
-				Schizophrenia more employable than depression? Language-based artificial intelligence model ratings for employability of psychiatric diagnoses and somatic and healthy controls
-			</div>
-			<div class="experience-company">PLOS ONE (2025)</div>
-			<div class="experience-date">
-				Lange, M., Koliousis, A., Gogarty, E., Fayez, F., &amp; Twumasi, R.
-			</div>
-			<div class="experience-date">
-				20(1).
-				<a href="https://doi.org/10.1371/journal.pone.0315768" target="_blank" rel="noopener noreferrer">
-					https://doi.org/10.1371/journal.pone.0315768
-				</a>
-			</div>
-		</div>
-
-		<div class="experience-item">
-			<div class="experience-title">
-				Anxious People, Please Apply! No Evidence for Decreased Perceptions of Employability in Individuals with Mental and Physical Illness Compared to Healthy Controls
-			</div>
-			<div class="experience-company">North American Journal of Psychology (2022)</div>
-			<div class="experience-date">Lange, M., &amp; Twumasi, R.</div>
-			<div class="experience-date">
-				24(2), 319-336.
-				<a href="https://kclpure.kcl.ac.uk/ws/portalfiles/portal/168224423/Lange_and_Twumasi_2022_Anxious_People_Please_Apply_NAJP_24_2_319_336.pdf" target="_blank" rel="noopener noreferrer">
-					PDF
-				</a>
-			</div>
-		</div>
-
-		<div class="experience-item" style="margin-top: 22px;">
-			<div class="experience-title">Conference Proceedings</div>
-		</div>
-
-		<div class="experience-item">
-			<div class="experience-title">
-				Digital Intelligence in Qualitative Management Studies
-			</div>
-			<div class="experience-company">Academy of Management Proceedings (2025)</div>
-			<div class="experience-date">Lange, M., Flynn, M. C., &amp; Twumasi, R.</div>
-			<div class="experience-date">
-				2025(1), 11823.
-				<a href="https://doi.org/10.5465/AMPROC.2025.11823" target="_blank" rel="noopener noreferrer">
-					https://doi.org/10.5465/AMPROC.2025.11823
-				</a>
-			</div>
-		</div>
-	</div>
+<div class="section-title">[About]</div>
+<div class="section-content">
+<p>
+I build applied AI systems, with a focus on LLM reliability, structured automation, and real-world deployment.
+</p>
+<p>
+My work centers on turning large language models into usable infrastructure: prompt architectures, multi-model routing, evaluation frameworks, and human-in-the-loop workflows.
+</p>
+<p>
+Most of my applied work has been in healthcare, where reliability and uncertainty matter. However, the systems I design — structured document parsing, decision support pipelines, and model evaluation harnesses — generalize across domains.
+</p>
+<p>
+I work at the intersection of statistical modelling, production LLM tooling, and implementation science.
+</p>
+<p>
+Based in London.
+</p>
+</div>
 </div>
 
-		<div class="section">
-			<div class="section-title" role="button" tabindex="0" aria-expanded="false">
-				[Education]
-			</div>
-			<div class="section-content" aria-hidden="true">
-				<div class="experience-item">
-					<div class="experience-title">PhD, Artificial Intelligence in Mental Healthcare</div>
-					<div class="experience-company">Department of Psychosis Studies, Institute of Psychiatry</div>
-					<div class="experience-date">King’s College London, September 2025</div>
-				</div>
+<div class="section">
+<div class="section-title">[LLM Systems & Production Tools]</div>
+<div class="section-content">
+<ul class="clean">
 
-				<div class="experience-item">
-					<div class="experience-title">Visiting Scholar</div>
-					<div class="experience-company">
-						Lab for Computational Physiology, Harvard-MIT Division of Sciences and Technology
-					</div>
-					<div class="experience-date">Massachusetts Institute of Technology, Spring 2025</div>
-				</div>
+<li>
+<div class="experience-title">BODHI — LLM Reliability Wrapper</div>
+<div class="experience-company">
+Provider-agnostic Python framework embedding uncertainty, structured outputs, and decision-aware prompting into LLM responses.
+</div>
+<div class="experience-company">
+<a href="https://pypi.org/project/bodhi-llm/" target="_blank">pypi.org/project/bodhi-llm</a>
+</div>
+</li>
 
-				<div class="experience-item">
-					<div class="experience-title">MSc, Organisational Psychiatry &amp; Psychology</div>
-					<div class="experience-company">Department of Psychosis Studies, Institute of Psychiatry</div>
-					<div class="experience-date">King’s College London, September 2021</div>
-				</div>
+<li>
+<div class="experience-title">BODHI Working Group</div>
+<div class="experience-company">
+Research collaboration on epistemic reliability, model humility, and evaluation standards for high-stakes AI systems.
+</div>
+<div class="experience-company">
+<a href="https://criticaldata.github.io/bodhi/" target="_blank">criticaldata.github.io/bodhi</a>
+</div>
+</li>
 
-				<div class="experience-item">
-					<div class="experience-title">BA, Psychology</div>
-					<div class="experience-company">Department of Psychology and Methods</div>
-					<div class="experience-date">Jacobs University Bremen, July 2019</div>
-				</div>
-			</div>
-		</div>
+<li>
+<div class="experience-title">SAP AI — Document → Structured Plan Automation</div>
+<div class="experience-company">
+End-to-end LLM pipeline that parses long-form documents and generates structured statistical analysis plans and machine-readable JSON outputs.
+</div>
+<div class="experience-company">
+<a href="https://sap-kcl-production.up.railway.app/" target="_blank">sap-kcl-production.up.railway.app</a>
+</div>
+</li>
 
-		<div class="section">
-			<div class="section-title" role="button" tabindex="0" aria-expanded="false">
-				[Experience]
-			</div>
-			<div class="section-content" aria-hidden="true">
-				<div class="experience-item">
-					<div class="experience-title">
-						Statistician, Department of Biostatistics &amp; Health Informatics, Institute of Psychiatry
-					</div>
-					<div class="experience-company">King’s College London</div>
-					<div class="experience-date">Oct 2025 – Present</div>
-				</div>
+</ul>
+</div>
+</div>
 
-				<div class="experience-item">
-					<div class="experience-title">Research Consultant</div>
-					<div class="experience-company">Freelance / Sole Trader</div>
-					<div class="experience-date">
-						Various clients, including City St George Uni London | A private clinic on Harley St | Exec Search firms from Germany & Switzerland
-					</div>
-					<div class="experience-date">June 2021 – Present</div>
-				</div>
-			</div>
-		</div>
+<div class="section">
+<div class="section-title">[Experience]</div>
+<div class="section-content">
 
-		<div class="section">
-			<div class="section-title" role="button" tabindex="0" aria-expanded="false">
-				[Reviewing]
-			</div>
-			<div class="section-content" aria-hidden="true">
-				<p class="small">
-					Reviewing for: PLoS Digital Health | Sage Digital Health | Artificial Intelligence in Medicine | Academy of Mangement |
-					BMC Health Services Research | BMC Medical Informatics and Decision Making | New England Science Symposium |
-					Psychology Research and Behavior Management
-				</p>
-			</div>
-		</div>
+<div class="experience-item">
+<div class="experience-title">Statistician, Department of Biostatistics & Health Informatics, Institute of Psychiatry</div>
+<div class="experience-company">King’s College London</div>
+<div class="experience-date">Oct 2025 – July 2026</div>
+</div>
 
-		<div class="section">
-			<div class="section-title" role="button" tabindex="0" aria-expanded="false">
-				[Contact]
-			</div>
-			<div class="section-content" aria-hidden="true">
-				<p>Email: <a href="mailto:mlange2@mit.edu">mlange2@mit.edu</a></p>
-			</div>
-		</div>
+<div class="experience-item">
+<div class="experience-title">Research Consultant</div>
+<div class="experience-company">Freelance / Sole Trader</div>
+<div class="experience-date">
+Various clients including City St George University London | Private clinic (Harley St) | HR firms (Germany)
+</div>
+<div class="experience-date">June 2021 – Present</div>
+</div>
 
-		<script>
-			function toggleSection(titleEl) {
-				const content = titleEl.nextElementSibling;
-				const isVisible = content.classList.contains("visible");
+</div>
+</div>
 
-				content.classList.toggle("visible");
-				titleEl.classList.toggle("active");
+<div class="section">
+<div class="section-title">[Publications]</div>
+<div class="section-content">
 
-				titleEl.setAttribute("aria-expanded", String(!isVisible));
-				content.setAttribute("aria-hidden", String(isVisible));
-			}
+<div class="experience-item">
+<div class="experience-title">Physical Restraint Use in a United States Intensive Care Unit</div>
+<div class="experience-company">The Lancet Regional Health - Americas (2026)</div>
+<div class="experience-date">
+<a href="https://doi.org/10.1016/j.lana.2026.101374" target="_blank">DOI</a>
+</div>
+</div>
 
-			document.fonts.ready.then(function () {
-				document.body.style.opacity = 1;
-			});
+<div class="experience-item">
+<div class="experience-title">Generating job recommendations using Gemini 2.0 Flash and Claude Sonnet 4</div>
+<div class="experience-company">Healthcare Technology Letters (2026)</div>
+<div class="experience-date">
+<a href="https://doi.org/10.1049/htl2.70058" target="_blank">DOI</a>
+</div>
+</div>
 
-			document.querySelectorAll(".section-title").forEach((title) => {
-				title.addEventListener("click", () => toggleSection(title));
-				title.addEventListener("keydown", (e) => {
-					if (e.key === "Enter" || e.key === " ") {
-						e.preventDefault();
-						toggleSection(title);
-					}
-				});
-			});
+<div class="experience-item">
+<div class="experience-title">Beyond Overconfidence: Embedding Curiosity and Humility</div>
+<div class="experience-company">PLOS Digital Health (2026)</div>
+<div class="experience-date">
+<a href="https://doi.org/10.1371/journal.pdig.0001013" target="_blank">DOI</a>
+</div>
+</div>
 
-			// Show "About" section by default
-			const first = document.querySelectorAll(".section-title")[0];
-			if (first) first.click();
-		</script>
-	</body>
+<div class="experience-item">
+<div class="experience-title">Humility and Curiosity in Human-AI Systems</div>
+<div class="experience-company">The Lancet (2025)</div>
+</div>
+
+<div class="experience-item">
+<div class="experience-title">ML Pharmaceutical Therapy Recommender</div>
+<div class="experience-company">BMC Psychiatry (2025)</div>
+</div>
+
+<div class="experience-item">
+<div class="experience-title">Medication Repurposing via ML</div>
+<div class="experience-company">BMC Digital Health (2025)</div>
+</div>
+
+<div class="experience-item">
+<div class="experience-title">AI Employability Ratings Study</div>
+<div class="experience-company">PLOS ONE (2025)</div>
+</div>
+
+<div class="experience-item">
+<div class="experience-title">Anxious People, Please Apply!</div>
+<div class="experience-company">North American Journal of Psychology (2022)</div>
+</div>
+
+<div class="experience-item">
+<div class="experience-title">Digital Intelligence in Qualitative Management Studies</div>
+<div class="experience-company">Academy of Management Proceedings (2025)</div>
+</div>
+
+</div>
+</div>
+
+<div class="section">
+<div class="section-title">[Reviewing]</div>
+<div class="section-content">
+<p>
+PLoS Digital Health | Sage Digital Health | Artificial Intelligence in Medicine | Academy of Management |
+BMC Health Services Research | BMC Medical Informatics and Decision Making |
+New England Science Symposium | Psychology Research and Behavior Management
+</p>
+</div>
+</div>
+
+<div class="section">
+<div class="section-title">[Contact]</div>
+<div class="section-content">
+<p>Email: <a href="mailto:mlange2@mit.edu">mlange2@mit.edu</a></p>
+</div>
+</div>
+
+<script>
+document.fonts.ready.then(function () {
+    document.body.style.opacity = 1;
+});
+document.querySelectorAll(".section-title").forEach((title) => {
+    title.addEventListener("click", () => {
+        const content = title.nextElementSibling;
+        content.classList.toggle("visible");
+        title.classList.toggle("active");
+    });
+});
+document.querySelectorAll(".section-title")[0].click();
+</script>
+
+</body>
 </html>
